@@ -85,3 +85,43 @@ Data:
   "timestamp": 1736459402000000000 // mandatory
   }
 ```
+
+## EVSE
+### UnlockConnector
+Post a UnlockConnector to OpenDataTelemetry for Specific EVSE device:
+
+Using Curl:
+```bash
+curl -X POST https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/UnlockConnector/all -d '{"deviceId": "BRIMTE19400577", "etc": "imt", "timestamp": 1740682333000000000}' -H "Content-Type: application/json"
+```
+
+Http Method: Post
+Host: https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/UnlockConnector/all
+Data:
+```json
+{
+  "deviceId": "BRIMTE19400577", // mandatory
+  "etc": "imt", // mandatory
+  "timestamp": 1740682333000000000, // mandatory
+  }
+```
+
+### Alert
+Post a Alert message to OpenDataTelemetry from Specific EVSE device:
+
+Using Curl:
+```bash
+curl -X POST https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/Alert/all -d '{"deviceId": "BRIMTE19400577", "etc": "imt", "data": "Alert Message", "timestamp": 1740682333000000000}' -H "Content-Type: application/json"
+```
+
+Http Method: Post
+Host: https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/Alert/all
+Data:
+```json
+{
+  "deviceId": "BRIMTE19400577", // mandatory
+  "etc": "imt", // mandatory
+  "timestamp": 1740682333000000000, // mandatory
+  "data": "Alert Message" // mandatory
+  }
+```
