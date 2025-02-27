@@ -21,6 +21,7 @@ func main() {
 		api.POST("IMT/NSPI/Alert/all", controller.HandleAllNspiAlertIngestion)
 
 		api.POST("IMT/EVSE/Alert/all", controller.HandleAllEvseAlertIngestion)
+		api.POST("IMT/EVSE/UnlockConnector/all", controller.HandleAllEvseUnlockConnectorIngestion)
 
 	}
 
