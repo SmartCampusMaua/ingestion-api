@@ -401,8 +401,8 @@ func HandleAllEvseUnlockConnectorIngestion(c *gin.Context) {
 	var organization = "IMT"
 	var deviceType = "EVSE"
 	var measurement = "UnlockConnector"
-	var deviceId = jsonMessageMap["deviceId"]
 
+	var deviceId = jsonMessageMap["deviceId"]
 	if deviceId == nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status": "error",
@@ -410,6 +410,16 @@ func HandleAllEvseUnlockConnectorIngestion(c *gin.Context) {
 		})
 		return
 	}
+
+	var data = jsonMessageMap["data"]
+	if data == nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status": "error",
+			"msg":    "Invalid input, please check your data. Missing 'data' key in json.",
+		})
+		return
+	}
+
 	var etc = jsonMessageMap["etc"]
 	if etc == nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -418,6 +428,7 @@ func HandleAllEvseUnlockConnectorIngestion(c *gin.Context) {
 		})
 		return
 	}
+
 	var timestamp = jsonMessageMap["timestamp"]
 	if timestamp == nil {
 		c.JSON(http.StatusBadRequest, gin.H{
