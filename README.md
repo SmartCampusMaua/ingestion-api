@@ -92,7 +92,7 @@ Post a UnlockConnector to OpenDataTelemetry for Specific EVSE device:
 
 Using Curl:
 ```bash
-curl -X POST https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/UnlockConnector/all -d '{"deviceId": "BRIMTE19400577", "etc": "imt", "timestamp": 1740682333000000000}' -H "Content-Type: application/json"
+curl -X POST https://smartcampus-k8s.maua.br/api/ingestion/v0.1/IMT/EVSE/UnlockConnector/all -d '{"deviceId": "BRIMTE19400577", "data": "AAE=", "etc": "imt", "timestamp": 1740682333000000000}' -H "Content-Type: application/json"
 ```
 
 Http Method: Post
