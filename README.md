@@ -102,6 +102,7 @@ Data:
 {
   "deviceId": "BRIMTE19400577", // mandatory
   "etc": "imt", // mandatory
+  "data": "AAE=", 
   "timestamp": 1740682333000000000, // mandatory
   }
 ```
