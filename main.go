@@ -22,6 +22,7 @@ func main() {
 
 		api.POST("IMT/EVSE/Alert/all", controller.HandleAllEvseAlertIngestion)
 		api.POST("IMT/EVSE/UnlockConnector/all", controller.HandleAllEvseUnlockConnectorIngestion)
+		api.POST("IMT/EVSE/RemoteStopTransaction/all", controller.HandleAllEvseRemoteStopTransactionIngestion)
 
 	}
 
