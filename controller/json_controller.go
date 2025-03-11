@@ -342,6 +342,14 @@ func HandleAllEvseAlertIngestion(c *gin.Context) {
 		})
 		return
 	}
+	var connectorId = jsonMessageMap["connectorId"]
+	if connectorId == nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status": "error",
+			"msg":    "Invalid input, please check your connectorId. Missing 'connectorId' key in json.",
+		})
+		return
+	}
 	var etc = jsonMessageMap["etc"]
 	if etc == nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -407,6 +415,15 @@ func HandleAllEvseUnlockConnectorIngestion(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status": "error",
 			"msg":    "Invalid input, please check your data. Missing 'deviceId' key in json.",
+		})
+		return
+	}
+
+	var connectorId = jsonMessageMap["connectorId"]
+	if connectorId == nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status": "error",
+			"msg":    "Invalid input, please check your connectorId. Missing 'connectorId' key in json.",
 		})
 		return
 	}
@@ -478,6 +495,15 @@ func HandleAllEvseRemoteStopTransactionIngestion(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status": "error",
 			"msg":    "Invalid input, please check your data. Missing 'deviceId' key in json.",
+		})
+		return
+	}
+
+	var connectorId = jsonMessageMap["connectorId"]
+	if connectorId == nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status": "error",
+			"msg":    "Invalid input, please check your connectorId. Missing 'connectorId' key in json.",
 		})
 		return
 	}
